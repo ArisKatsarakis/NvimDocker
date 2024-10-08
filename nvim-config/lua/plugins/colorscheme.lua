@@ -1,8 +1,8 @@
 return 
-{ 
-  "Mofiqul/dracula.nvim", 
+{
+  "Mofiqul/dracula.nvim",
   opt = {},
-  config = function() 
+  config = function()
     local dracula = require("dracula")
     dracula.setup({
       -- customize dracula color palette
@@ -56,5 +56,6 @@ return
             -- end,
           })
 
+  vim.cmd("colorscheme dracula")
   end, 
 }
