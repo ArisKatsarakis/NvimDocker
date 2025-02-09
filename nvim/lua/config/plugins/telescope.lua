@@ -23,6 +23,7 @@ return {
       require('telescope').load_extension('fzf')
 
       vim.keymap.set("n", "<leader><leader>", require('telescope.builtin').find_files)
+      vim.keymap.set("n", "<leader>fb", require('telescope.builtin').buffers)
       -- references finder
       vim.keymap.set("n", "<leader>fr",
         function()

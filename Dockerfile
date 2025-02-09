@@ -1,6 +1,6 @@
 FROM alpine 
 
-RUN apk update  && apk add gcc neovim  git g++ zlib zlib-dev  node npm  lua-language-server neovim-doc make ripgrep fd fzf  curl
+RUN apk update  && apk add gcc neovim  git g++ zlib zlib-dev  nodejs npm  lua-language-server neovim-doc make ripgrep fd fzf  curl openjdk21-jdk jdtls maven gradle cargo 
 
 RUN mkdir -p /root/.config/
 
