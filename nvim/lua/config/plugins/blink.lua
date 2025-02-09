@@ -4,7 +4,7 @@ return {
   dependencies = 'rafamadriz/friendly-snippets',
 
   version = '*',
-
+  event =  event = "InsertEnter",
   ---@module 'blink.cmp'
   ---@type blink.cmp.Config
   opts = {
