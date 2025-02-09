@@ -4,9 +4,7 @@ return {
     tag = '0.1.8',
     dependencies = {
       'nvim-lua/plenary.nvim',
-      {
-        'nvim-telescope/telescope-fzf-native.nvim', build = 'make'
-      }
+      { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
     },
     config = function()
       -- TODO inspect telescope themes for different pickers
@@ -16,8 +14,14 @@ return {
           find_files = {
             theme = "dropdown"
           }
-        }
+        },
+        extensions = {
+          fzf = {}
+        },
       }
+
+      require('telescope').load_extension('fzf')
+
       vim.keymap.set("n", "<leader><leader>", require('telescope.builtin').find_files)
       -- references finder
       vim.keymap.set("n", "<leader>fr",
@@ -25,9 +29,7 @@ return {
           local opts = require('telescope.themes').get_ivy()
           require("telescope.builtin").lsp_references(opts)
         end)
-      local cool = "hello"
-      print(cool)
+      require "config.plugins.telescope.multigrep".setup()
     end
   }
-
 }

@@ -1,6 +1,6 @@
 FROM alpine 
 
-RUN apk update  && apk add gcc neovim  git g++ zlib zlib-dev  node npm  lua-language-server neovim-doc make ripgrep fd
+RUN apk update  && apk add gcc neovim  git g++ zlib zlib-dev  node npm  lua-language-server neovim-doc make ripgrep fd fzf 
 
 RUN mkdir -p /root/.config/
 
