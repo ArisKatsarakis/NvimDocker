@@ -16,6 +16,7 @@ return {
       },
     },
     config = function()
+      --config for lua server
       local capabilities = require('blink.cmp').get_lsp_capabilities()
       local lspconfig = require('lspconfig')
 
