@@ -42,6 +42,8 @@ return {
         -- Insert the definition's text into the buffer
         vim.api.nvim_buf_set_lines(0, 0, -1, false, { def_text })
       end)
+
+
       vim.api.nvim_create_autocmd('LspAttach', {
         callback = function(args)
           local client = vim.lsp.get_client_by_id(args.data.client_id)

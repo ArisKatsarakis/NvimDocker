@@ -31,6 +31,7 @@ return {
           require("telescope.builtin").lsp_references(opts)
         end)
       require "config.plugins.telescope.multigrep".setup()
+      require "config.plugins.telescope.code_action".setup()
     end
   }
 }
