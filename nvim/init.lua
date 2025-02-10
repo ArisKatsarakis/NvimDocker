@@ -21,7 +21,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 
 vim.keymap.set("n", "<leader>bd", ":bd<CR>")
 vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>")
-
+vim.keymap.set("n", "<leader>q", ":q<CR>")
 
 -- samples commands
 local job_terminal_id = 0
@@ -36,8 +36,20 @@ end)
 --TODO fix any errors
 -- build procect command
 vim.keymap.set("n", "<leader>bp", function()
-  -- make
-  -- mvn clean install , gradle install
-  vim.fn.chansend(job_terminal_id, { "ls \r\n" })
+  local cdir = vim.uv.cwd()
+  local files = vim.fn.readdir(cdir)
+  for _, file in ipairs(files) do
+    if (file == 'build.gradle') then
+      print('found')
+      return
+    end
+  end
+  local parent_dir = vim.fn.fnamemodify(cdir, ":h") -- Get parent directory
+  files = vim.fn.readdir(parent_dir)
+  for _, file in ipairs(files) do
+    if (file == 'build.gradle') then
+      print('found in parent_dir')
+    end
+  end
 end
 )
