@@ -19,6 +19,8 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   end,
 })
 
+vim.keymap.set("n", "<leader>bd", ":bd<CR>")
+vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>")
 
 local job_terminal_id = 0
 vim.keymap.set("n", "<leader>ft", function()
