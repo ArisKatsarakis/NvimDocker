@@ -51,5 +51,10 @@ vim.keymap.set("n", "<leader>bp", function()
       print('found in parent_dir')
     end
   end
+
+  -- TODO execute the following commands in terminal using chansend:
+  -- cd to dir found the build.gradle
+  -- execute build.gradle
+  -- return after finishing the gradle
 end
 )
