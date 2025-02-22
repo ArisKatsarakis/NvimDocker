@@ -1,6 +1,6 @@
 -- If you started neovim within `~/dev/xy/project-1` this would resolve to `project-1`
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
-local workspace_dir = '$HOME/jdtls_workspace' .. project_name
+local workspace_dir = '/Users/macbook/jdtls_workspace' .. project_name
 
 
 
@@ -34,7 +34,7 @@ local config = {
 
 
     -- 💀
-    '-data', workspace_dir
+    '-data', workspace_dir,
   },
 
   -- 💀
