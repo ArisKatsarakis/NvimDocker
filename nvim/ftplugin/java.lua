@@ -1,6 +1,6 @@
 -- If you started neovim within `~/dev/xy/project-1` this would resolve to `project-1`
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
-local workspace_dir = '/root/jdtls_workspace' .. project_name
+local workspace_dir = '$HOME/jdtls_workspace' .. project_name
 
 
 
@@ -11,7 +11,7 @@ local config = {
   cmd = {
 
     -- 💀
-    '/usr/lib/jvm/java-21-openjdk/bin/java',
+    '/opt/homebrew/Cellar/openjdk@21/21.0.6/libexec/openjdk.jdk/Contents/Home/bin/java',
     '-Declipse.application=org.eclipse.jdt.ls.core.id1',
     '-Dosgi.bundles.defaultStartLevel=4',
     '-Declipse.product=org.eclipse.jdt.ls.core.product',
@@ -23,14 +23,14 @@ local config = {
     '--add-opens', 'java.base/java.lang=ALL-UNNAMED',
 
     -- 💀
-    '-jar', '/root/jdtls/plugins/org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar',
+    '-jar', '/Users/macbook/jdtls-server/plugins/org.eclipse.equinox.launcher_1.6.900.v20240613-2009.jar',
     -- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                                       ^^^^^^^^^^^^^^
     -- Must point to the                                                     Change this to
     -- eclipse.jdt.ls installation                                           the actual version
 
 
     -- 💀
-    '-configuration', '/root/jdtls/config_linux/',
+    '-configuration', '/Users/macbook/jdtls-server/config_mac_arm',
 
 
     -- 💀
