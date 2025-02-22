@@ -5,5 +5,4 @@ RUN apk update  && apk add gcc neovim  git g++ zlib zlib-dev  nodejs npm  lua-la
 RUN mkdir -p /root/.config/
 
 COPY nvim/ /root/.config/nvim
-
 ENTRYPOINT [ "/bin/sh" ]

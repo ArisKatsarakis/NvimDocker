@@ -8,6 +8,7 @@ require("config.lazy")
 
 vim.keymap.set("n", "<space>x", ":.lua<CR>")
 vim.keymap.set("n", "<space><space>x", ":source % <CR>")
+
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode
 --  See `:help vim.highlight.on_yank()`
@@ -22,6 +23,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 vim.keymap.set("n", "<leader>bd", ":bd<CR>")
 vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>")
 vim.keymap.set("n", "<leader>q", ":q<CR>")
+
 
 -- samples commands
 local job_terminal_id = 0

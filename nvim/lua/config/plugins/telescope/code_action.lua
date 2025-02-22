@@ -32,6 +32,7 @@ end
 M.setup = function()
   -- vim.keymap.set('n', '<leader>ca', lsp_code_actions_picker)
   vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action)
+  vim.keymap.set("n", "<leader>ff", vim.lsp.buf.document_symbol)
 end
 
 return M
