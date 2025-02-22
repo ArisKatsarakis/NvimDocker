@@ -21,43 +21,14 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 vim.keymap.set("n", "<leader>bd", ":bd<CR>")
-vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>")
+vim.keymap.set("t", "<Esc><Esc>", ":normal<CR>")
 vim.keymap.set("n", "<leader>q", ":q<CR>")
 vim.keymap.set("n", "<leader>qq", ":qall<CR>")
 
 
--- samples commands
-local job_terminal_id = 0
 vim.keymap.set("n", "<leader>ft", function()
   vim.cmd.vnew()
   vim.cmd.term()
   vim.cmd.wincmd("J")
-  vim.api.nvim_win_set_height(0, 25)
-
-  job_terminal_id = vim.bo.channel
+  vim.api.nvim_win_set_height(0, 40)
 end)
---TODO fix any errors
--- build procect command
-vim.keymap.set("n", "<leader>bp", function()
-  local cdir = vim.uv.cwd()
-  local files = vim.fn.readdir(cdir)
-  for _, file in ipairs(files) do
-    if (file == 'build.gradle') then
-      print('found')
-      return
-    end
-  end
-  local parent_dir = vim.fn.fnamemodify(cdir, ":h") -- Get parent directory
-  files = vim.fn.readdir(parent_dir)
-  for _, file in ipairs(files) do
-    if (file == 'build.gradle') then
-      print('found in parent_dir')
-    end
-  end
-
-  -- TODO execute the following commands in terminal using chansend:
-  -- cd to dir found the build.gradle
-  -- execute build.gradle
-  -- return after finishing the gradle
-end
-)

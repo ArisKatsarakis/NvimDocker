@@ -25,6 +25,7 @@ return {
       vim.keymap.set("n", "<leader><leader>", require('telescope.builtin').find_files)
       vim.keymap.set("n", "<leader>fb", require('telescope.builtin').buffers)
       vim.keymap.set("n", "<leader>ff", require('telescope.builtin').lsp_document_symbols)
+      vim.keymap.set("n", "<leader>fh", require('telescope.builtin').help_tags)
       -- references finder
       vim.keymap.set("n", "<leader>fr",
         function()
