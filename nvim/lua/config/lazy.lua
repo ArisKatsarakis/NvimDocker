@@ -25,19 +25,29 @@ vim.opt.rtp:prepend(lazypath)
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {
-    {
-      "scottmckendry/cyberdream.nvim",
-      lazy = false,
-      priority = 1000,
-      config = function()
-        require("cyberdream").setup({
-          terminal_colors = true,
-          transparent = true,
-        })
-        vim.cmd.colorscheme "cyberdream"
-      end,
-    },
+    -- {
+    --   "scottmckendry/cyberdream.nvim",
+    --   lazy = false,
+    --   priority = 1000,
+    --   config = function()
+    --     require("cyberdream").setup({
+    --       terminal_colors = true,
+    --       transparent = true,
+    --     })
+    --     vim.cmd.colorscheme "cyberdream"
+    --   end,
+    -- },
     -- { "folke/tokyonight.nvim",  config = function() vim.cmd.colorscheme "tokyonight" end },
+    -- { "diegoulloao/neofusion.nvim", priority = 1000, config = function() require("neofusion").setup({ terminal_color = true, }) vim.o.background = "dark" vim.cmd([[ colorscheme neofusion ]]) end, },
+    {
+      'Everblush/nvim',
+      name = 'everblush',
+      config = function()
+        require('everblush').setup({})
+        vim.cmd('colorscheme everblush')
+      end
+    },
+    -- { "catppuccin/nvim", name = "catppuccin", priority = 1000, config = function() colorscheme catppuccin " catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha require('catppuccin').setup({ flavour = 'mocha', transparent_background = false, term_colors = true }) vim.cmd.colorscheme "catppuccin" end },
     { import = "config.plugins" },
   },
 })
