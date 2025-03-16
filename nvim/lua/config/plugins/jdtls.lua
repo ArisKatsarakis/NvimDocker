@@ -7,8 +7,29 @@ return {
   },
   {
     "williamboman/mason.nvim",
+    dependencies = {
+      "WhoIsSethDaniel/mason-tool-installer.nvim",
+    },
     config = function()
-      require('mason').setup()
+      local mason = require('mason')
+      local masonInstaller = require('mason-tool-installer')
+      mason.setup(
+        {
+          ui = {
+            icons = {
+              package_installed = "✓",
+              package_pending = "➜",
+              package_uninstalled = "✗",
+            },
+          }
+        }
+      )
+      masonInstaller.setup({
+        ensure_installed = {
+          "clangd",
+          "clang-format"
+        }
+      })
     end
   }
 }
